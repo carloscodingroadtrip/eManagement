@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"  class="no-js">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Train Station App :: Carlos Molina :: Full Stack Web Developer</title>
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Employee Data Management</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                </div>
+              </nav>
+            <div class="container-fluid">
+                <!-- <div class="jumbotron">
+                    <h1></h1>
+                </div> -->
+                <!-- Search Panel -->
+                <div class="row">
+                    <!-- Traing Schedule -->
+                    <div class="col-12 col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title"><strong><i class="fa fa-table"></i></strong>   Employee Data </h3>
+                            </div>
+                            <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th>Employee Name</th>
+                                        <th>Role</th>
+                                        <th>Start Date</th>
+                                        <th>Months Worked</th>
+                                        <th>Monthly Rate ($)</th>
+                                        <th>Total Billeds ($)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <!-- Insert rows here -->
+                                    </tbody>
+                                  </table>
+                        </div>
+                    </div>
+                    <!-- Add Train From -->
+                    <div class="col-6 col-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Add Train</h3>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="trainName">Employee name</label>
+                                        <input type="text" class="form-control" id="trainNameInput" placeholder="Give us a name for the train">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Destination">Role</label>
+                                        <input type="text" class="form-control" id="trainDestInput" placeholder="Enter a destination">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="First Train">Start Date(DD/MM/YY)</label>
+                                        <input type="text" id="firstTrainInput"
+                                        minlength="4" placeholder="HH:MM Military Time"/>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Frequency">Monthly Rate</label>
+                                        <input type="number" name="frequency" class="form-control" id="frequencyInput" placeholder="How often in  minutes will the train run.">
+                                    </div>
+                                    <button type="submit" id="addTrainBtn" class="btn btn-primary btn-info">Add Employee</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <script src="./assets/javascript/main.js"></script>
+    <!-- <script src="./assets/javascript/modernizr-custom.js"></script> -->
+
+  </body>
+</html>
