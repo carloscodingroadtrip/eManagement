@@ -1,6 +1,6 @@
 $(document).ready(function () {
     Number.prototype.format = function(n, x) {
-        var re = '(\\d)(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+        var re = '(\\d)(?=(\\d{' + (x || 7) + '})+' + (n > 0 ? '\\.' : '$') + ')';
         return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$1,');
     };
 
@@ -56,19 +56,11 @@ $(document).ready(function () {
     });
 
     $('#addEmployeeBtn').on('click', function (e) {
-        e.preventDefault();
-        // // Generate a random ID for our train
-        // randomID = Math.floor(Math.random() * 989812843) + 1;
-        // Capture user inputs and store them into variables
         var inputName = $("#empNameInput").val().trim();
         var inputRole = $("#empRoleInput").val().trim();
         var inputStartDate = moment($("#startDateInput").val().trim(), "DD/MM/YY").format("X");
 
         var empStartPretty = moment.unix(inputStartDate).format("MM/DD/YY");
-
-
-        // console.log(empStartPretty);
-        // console.log(empMonths);
 
         var inputRate = $("#rateInput").val().trim();
         myEmployee.name            = inputName;
@@ -77,7 +69,6 @@ $(document).ready(function () {
         myEmployee.monthlyRate     = inputRate;
         console.log(myEmployee);
         db.push(myEmployee);
-
 
     });
 });
