@@ -28,7 +28,7 @@ $(document).ready(function () {
 
         var name$           = $("<td>").text(name);
         var role$           = $("<td>").text(role);
-        var startDate$      = $("<td>").text(moment(startDate,"DD/MM/YY").format("X"));
+        var startDate$      = $("<td>").text(moment(startDate,"X").format("DD/MM/YY"));
         var workMonths$     = $("<td>").text(workedMonths);
         var rate$           = $("<td>").text(rate);
         var totalBilled$    = $("<td>").text(workedMonths * rate);
