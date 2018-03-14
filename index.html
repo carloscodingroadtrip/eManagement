@@ -62,22 +62,22 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="empName">Employee name</label>
-                                        <input type="text" class="form-control" id="empNameInput" placeholder="Give us a name for the employee">
+                                        <input type="text" class="form-control" id="empNameInput" placeholder="Give us a name for the employee" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="empRole">Role</label>
-                                        <input type="text" class="form-control" id="empRoleInput" placeholder="Enter role">
+                                        <input type="text" class="form-control" id="empRoleInput" placeholder="Enter role" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="Start Date">Start Date(DD/MM/YY)</label>
                                         <input type="text" id="startDateInput"
-                                        minlength="4" placeholder="dd/mm/yy"/>
+                                        minlength="4" placeholder="dd/mm/yy" required/>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="rate">Monthly Rate</label>
-                                        <input type="number" name="rate" class="form-control" id="rateInput" placeholder="what is your rate?">
+                                        <input type="number" name="rate" class="form-control" id="rateInput" placeholder="what is your rate?" required>
                                     </div>
                                     <button type="submit" id="addEmployeeBtn" class="btn btn-primary btn-info">Add Employee</button>
                                 </form>
@@ -94,7 +94,7 @@
      <!-- Link to Moment.js should go here -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <script src="./assets/javascript/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <!-- <script src="./assets/javascript/modernizr-custom.js"></script> -->
 
   </body>

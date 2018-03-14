@@ -129,7 +129,8 @@
                 if (!userData){
                     db.push().set({
                         userName: sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last"),
-                        email: sessionStorage.getItem("email")
+                        email: sessionStorage.getItem("email"),
+                        dateAdded: firebase.database.ServerValue.TIMESTAMP
                     });
                 }
             });
