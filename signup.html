@@ -48,16 +48,15 @@
             </div>
         </div>
 
-        <!-- Most Recent Member Panel -->
+        <!-- Most Recent Employee Panel -->
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Most Recent Member</h3>
+                    <h3 class="panel-title">Most Recent Employee</h3>
                 </div>
                 <div class="panel-body" id="recent-member">
                     <h2 id="name-display"></h2>
                     <h4 id="email-display"></h4>
-                    <h4 id="age-display"></h4>
                     <p id="comment-display"></p>
                 </div>
             </div>
@@ -101,7 +100,6 @@
         // Store all content into sessionStorage
         sessionStorage.setItem("name", name);
         sessionStorage.setItem("email", email);
-        sessionStorage.setItem("age", age);
         sessionStorage.setItem("comment", comment);
     });
 
@@ -109,8 +107,6 @@
     if(sessionStorage.getItem("name") !== null){
         $("#name-display").text(sessionStorage.getItem("name"));
         $("#email-display").text(sessionStorage.getItem("email"));
-        $("#age-display").text(sessionStorage.getItem("age"));
-        $("#comment-display").text(sessionStorage.getItem("comment"));
     }
 
 </script>
