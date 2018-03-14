@@ -77,7 +77,7 @@
     // Capture Button Click
     $("#add-user").on("click", function(event) {
         // prevent page from refreshing when form tries to submit itself
-        event.preventDefault();
+        //event.preventDefault();
 
         // Capture user inputs and store them into variables
         var first = $("#first-input").val().trim();
@@ -124,12 +124,13 @@
             firebase.initializeApp(config);
             // Create a variable to reference the database
             var db = firebase.database().ref('Users');
-            db.orderByChild("name").equalTo(sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last")).once("value",snapshot => {
-                    const userData = snapshot.val();
-                if (!userData){
+            db.child(sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last")).once('value', function(snapshot) {
+                var exists = (snapshot.val() !== null);
+                if(!exists){
                     db.push().set({
                         userName: sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last"),
                         email: sessionStorage.getItem("email")
+                        dataStart: firebase.database.ServerValue.TIMESTAMP
                     });
                 }
             });
@@ -137,7 +138,6 @@
     });
 
 </script>
-
 </body>
 
 </html>
