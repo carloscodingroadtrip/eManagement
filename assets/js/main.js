@@ -1,8 +1,4 @@
 $(document).ready(function () {
-    Number.prototype.format = function(n, x) {
-        var re = '(\\d)(?=(\\d{' + (x || 7) + '})+' + (n > 0 ? '\\.' : '$') + ')';
-        return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$1,');
-    };
 
      // Initialize Firebase
     var config = {
@@ -28,17 +24,17 @@ $(document).ready(function () {
         var data = Object.values(childSnapshot.val());
         console.log(data);
         let [rate, name, role, startDate] = data;
-        rate = parseInt(rate).format(2);
+        rate = parseInt(rate);
 
         var workedMonths = moment().diff(moment.unix(startDate, "X"), "months");
-        var totalBilled = (workedMonths * rate).format(2);
+        var totalBilled = parseInt((workedMonths * rate));
 
         var name$           = $("<td>").text(name);
         var role$           = $("<td>").text(role);
         var startDate$      = $("<td>").text(moment(startDate,"X").format("DD/MM/YY"));
         var workMonths$     = $("<td>").text(workedMonths);
-        var rate$           = $("<td>").text('$ ' + rate);
-        var totalBilled$    = $("<td>").text('$ ' + totalBilled);
+        var rate$           = $("<td>").text(formatDollar(rate));
+        var totalBilled$    = $("<td>").text(formatDollar(totalBilled));
         var tBody = $("tbody");
         var tRow = $("<tr>");
 
@@ -69,6 +65,13 @@ $(document).ready(function () {
         myEmployee.monthlyRate     = inputRate;
         console.log(myEmployee);
         db.push(myEmployee);
-
     });
+
+    function formatDollar(num) {
+        var p = num.toFixed(2).split(".");
+        return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+            return  num=="-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
+        }, "") + "." + p[1];
+    }
+
 });
