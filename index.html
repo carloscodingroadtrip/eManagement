@@ -12,7 +12,7 @@
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Train Station App :: Carlos Molina :: Full Stack Web Developer</title>
+    <title>Employee Station App :: COYTV :: Full Stack Web Developer</title>
   </head>
   <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -29,7 +29,7 @@
                 </div> -->
                 <!-- Search Panel -->
                 <div class="row">
-                    <!-- Traing Schedule -->
+                    <!-- Employe Data -->
                     <div class="col-12 col-md-9">
                         <div class="card">
                             <div class="card-header">
@@ -52,7 +52,7 @@
                                   </table>
                         </div>
                     </div>
-                    <!-- Add Train From -->
+                    <!-- Add Employee From -->
                     <div class="col-6 col-md-3">
                         <div class="card">
                             <div class="card-header">
@@ -61,25 +61,25 @@
                             <div class="card-body">
                                 <form>
                                     <div class="form-group">
-                                        <label for="trainName">Employee name</label>
-                                        <input type="text" class="form-control" id="trainNameInput" placeholder="Give us a name for the train">
+                                        <label for="empName">Employee name</label>
+                                        <input type="text" class="form-control" id="empNameInput" placeholder="Give us a name for the employee">
                                     </div>
                                     <div class="form-group">
-                                        <label for="Destination">Role</label>
-                                        <input type="text" class="form-control" id="trainDestInput" placeholder="Enter a destination">
+                                        <label for="empRole">Role</label>
+                                        <input type="text" class="form-control" id="empRoleInput" placeholder="Enter role">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="First Train">Start Date(DD/MM/YY)</label>
-                                        <input type="text" id="firstTrainInput"
-                                        minlength="4" placeholder="HH:MM Military Time"/>
+                                        <label for="Start Date">Start Date(DD/MM/YY)</label>
+                                        <input type="text" id="startDateInput"
+                                        minlength="4" placeholder="dd/mm/yy"/>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="Frequency">Monthly Rate</label>
-                                        <input type="number" name="frequency" class="form-control" id="frequencyInput" placeholder="How often in  minutes will the train run.">
+                                        <label for="rate">Monthly Rate</label>
+                                        <input type="number" name="rate" class="form-control" id="rateInput" placeholder="what is your rate?">
                                     </div>
-                                    <button type="submit" id="addTrainBtn" class="btn btn-primary btn-info">Add Employee</button>
+                                    <button type="submit" id="addEmployeeBtn" class="btn btn-primary btn-info">Add Employee</button>
                                 </form>
                             </div>
                         </div>
