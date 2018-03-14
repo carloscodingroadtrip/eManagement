@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <title>Sign-Up Today!</title>
-
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -107,6 +107,34 @@
         $("#name-display").text(sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last"));
         $("#email-display").text(sessionStorage.getItem("email"));
     }
+
+    $(document).ready(function () {
+        if(sessionStorage.getItem("first") !== null){
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCfuDWDjOIhrrDx4al6ONoSoSNjfFpygoo",
+                authDomain: "emanagement-43257.firebaseapp.com",
+                databaseURL: "https://emanagement-43257.firebaseio.com",
+                projectId: "emanagement-43257",
+                storageBucket: "",
+                messagingSenderId: "707210450275"
+            };
+
+            //Initialize the database
+            firebase.initializeApp(config);
+            // Create a variable to reference the database
+            var db = firebase.database().ref('Users');
+            db.orderByChild("name").equalTo(sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last")).once("value",snapshot => {
+                    const userData = snapshot.val();
+                if (!userData){
+                    db.push().set({
+                        userName: sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last"),
+                        email: sessionStorage.getItem("email")
+                    });
+                }
+            });
+        }
+    });
 
 </script>
 
