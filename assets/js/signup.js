@@ -45,7 +45,7 @@ $(document).ready(function () {
                 db.push().set({
                     userName: sessionStorage.getItem("first") + ' ' + sessionStorage.getItem("last"),
                     email: sessionStorage.getItem("email"),
-                    dateStart: firebase.database.ServerValue.TIMESTAMP
+                    dateAdded: firebase.database.ServerValue.TIMESTAMP
                 });
             }
         });
