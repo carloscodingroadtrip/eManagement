@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    Number.prototype.format = function(n, x) {
+        var re = '(\\d)(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+        return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$1,');
+    };
+
      // Initialize Firebase
     var config = {
     apiKey: "AIzaSyCfuDWDjOIhrrDx4al6ONoSoSNjfFpygoo",
@@ -22,16 +27,18 @@ $(document).ready(function () {
     db.on("child_added", function (childSnapshot) {
         var data = Object.values(childSnapshot.val());
         console.log(data);
-        const [rate, name, role, startDate] = data;
+        let [rate, name, role, startDate] = data;
+        rate = parseInt(rate).format(2);
 
         var workedMonths = moment().diff(moment.unix(startDate, "X"), "months");
+        var totalBilled = (workedMonths * rate).format(2);
 
         var name$           = $("<td>").text(name);
         var role$           = $("<td>").text(role);
         var startDate$      = $("<td>").text(moment(startDate,"X").format("DD/MM/YY"));
         var workMonths$     = $("<td>").text(workedMonths);
-        var rate$           = $("<td>").text(rate);
-        var totalBilled$    = $("<td>").text(workedMonths * rate);
+        var rate$           = $("<td>").text('$ ' + rate);
+        var totalBilled$    = $("<td>").text('$ ' + totalBilled);
         var tBody = $("tbody");
         var tRow = $("<tr>");
 
@@ -60,11 +67,8 @@ $(document).ready(function () {
         var empStartPretty = moment.unix(inputStartDate).format("MM/DD/YY");
 
 
-        console.log(empStartPretty);
-        console.log(empMonths);
-
-
-
+        // console.log(empStartPretty);
+        // console.log(empMonths);
 
         var inputRate = $("#rateInput").val().trim();
         myEmployee.name            = inputName;
