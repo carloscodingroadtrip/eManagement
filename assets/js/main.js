@@ -1,23 +1,23 @@
 $(document).ready(function () {
+     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyAG0wfCLZpe-EMXcbg6ZkcnHXuOf9j2G8o",
-        authDomain: "trainwreck-622d8.firebaseapp.com",
-        databaseURL: "https://trainwreck-622d8.firebaseio.com",
-        projectId: "trainwreck-622d8",
-        storageBucket: "trainwreck-622d8.appspot.com",
-        messagingSenderId: "824399186719"
-    };
+    apiKey: "AIzaSyCfuDWDjOIhrrDx4al6ONoSoSNjfFpygoo",
+    authDomain: "emanagement-43257.firebaseapp.com",
+    databaseURL: "https://emanagement-43257.firebaseio.com",
+    projectId: "emanagement-43257",
+    storageBucket: "",
+    messagingSenderId: "707210450275"
+  };
     //Initialize the database
     firebase.initializeApp(config);
     // Create a variable to reference the database
-    var db = firebase.database().ref('Trains');
-    var randomID;
-    var myTrain = {
-        name: "",
-        destination: "",
-        frequecy: 30,
-        nextArrival: 1020,
-        ID: 102030409,
+    var db = firebase.database().ref('Employee');
+
+    var myEmployee = {
+        eName: "",
+        eRole: "",
+        startDate: "",
+        monthlyRate: 1243,
     };
 
     //-------- DATABASE ------------------------------
